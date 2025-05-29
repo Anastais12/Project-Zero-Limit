@@ -3,28 +3,23 @@ package com.cl1ppz12.projectzerolimit;
 import com.cl1ppz12.projectzerolimit.inventory.AbilityInventoryScreenHandler;
 import com.cl1ppz12.projectzerolimit.item.ZeroLimitItemGroups;
 import com.cl1ppz12.projectzerolimit.item.ZeroLimitItems;
-import com.cl1ppz12.projectzerolimit.network.OpenAbilityInventoryPayload; // <<< IMPORT THIS
+import com.cl1ppz12.projectzerolimit.network.OpenAbilityInventoryPayload;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry; // <<< IMPORT THIS
-import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking; // <<< IMPORT THIS
-import net.minecraft.entity.player.PlayerEntity; // <<< IMPORT THIS
-import net.minecraft.entity.player.PlayerInventory; // <<< IMPORT THIs
-import net.minecraft.inventory.SimpleInventory; // <<< IMPORT THIS
+import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.resource.featuretoggle.FeatureFlags;
-import net.minecraft.screen.NamedScreenHandlerFactory; // <<< IMPORT THIS
-import net.minecraft.screen.ScreenHandler; // <<< IMPORT THIS
+import net.minecraft.screen.NamedScreenHandlerFactory;
+import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.ScreenHandlerType;
-import net.minecraft.text.Text; // <<< IMPORT THIS
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
-import java.util.HashMap;
-
-import java.util.Map;
 
 
 
