@@ -43,9 +43,8 @@ dependencies {
 	//Lib's
 	modImplementation("com.terraformersmc:modmenu:${project.modmenu_version}")//ModMenu
 	include(modImplementation("maven.modrinth:modmenu-badges-lib:${project.modmenu_badges_lib_version}"))//ModMenuBadgesLib
-	//Cardinal Components API
-	modImplementation "org.ladysnake.cardinal-components-api:cardinal-components-base:${project.cca_version}"
-	modImplementation "org.ladysnake.cardinal-components-api:cardinal-components-entity:${project.cca_version}"
+	//MidnightLib
+	modImplementation ("maven.modrinth:midnightlib:${project.midnightlib_version}")
 
 }
 

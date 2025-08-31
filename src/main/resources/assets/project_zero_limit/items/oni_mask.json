@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "project_zero_limit:items/steel"
+    "model": "project_zero_limit:item/oni_mask"
   }
 }

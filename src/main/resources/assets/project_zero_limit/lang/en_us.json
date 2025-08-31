@@ -2,18 +2,15 @@
   "itemgroup.project_zero_limit.zero_limit": "Zero Limit",
 
   "category.project_zero_limit.abilities": "Zero Limit Abilities",
+  "key.project_zero_limit.r": "Combat Mode Enable/Disable",
   "key.project_zero_limit.z": "1st Ability",
   "key.project_zero_limit.x": "2nd Ability",
   "key.project_zero_limit.c": "3rd Ability",
   "key.project_zero_limit.v": "4th Ability",
-  "key.project_zero_limit.g": "Open Ability Inventory",  "container.project_zero_limit.ability_inventory": "Ability Inventory",
+  "key.project_zero_limit.g": "Open Ability Inventory",
 
+  "effect.project_zero_limit.combat_mode": "Combat Mode",
 
+  "item.project_zero_limit.oni_mask": "Oni Mask"
 
-
-  "item.project_zero_limit.steel": "Steel",
-
-  "tooltip.project_zero_limit.steel.tooltip": "Steel Tooltip",
-  "button.project_zero_limit.select_ability_1": "Ability 1",
-  "gui.project_zero_limit.active_abilities": "Active Abilities"
 }

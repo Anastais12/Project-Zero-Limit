@@ -5,10 +5,10 @@
 	"name": "Project Zero Limit",
 	"description": "This is a Mod about Universal Powers With Zero Limits!",
 	"authors": [
-		"cl1ppz12"
+		"cl1ppz12: coder/artist"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/"
+		"homepage": "https://modrinth.com/project/project-zero-limit"
 	},
 	"license": "MIT",
 	"icon": "assets/project_zero_limit/icon.png",
@@ -28,7 +28,7 @@
 		"project_zero_limit.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.16.10",
+		"fabricloader": ">=0.16.14",
 		"minecraft": "~1.21.5",
 		"java": ">=21",
 		"fabric-api": "*",

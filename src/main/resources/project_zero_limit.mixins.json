@@ -3,7 +3,8 @@
 	"package": "com.cl1ppz12.projectzerolimit.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"ExampleMixin"
+		"ProjectZeroLimitMixin",
+		"PlayerEntityRendererMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

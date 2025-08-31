@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "0": "minecraft:items/oni_mask"
+  }
+}
