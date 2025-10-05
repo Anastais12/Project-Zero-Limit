@@ -1,19 +1,55 @@
 {
-  "itemgroup.project_zero_limit.zero_limit": "Zero Limit",
+  "itemgroup.project_zero_limit.zero_limit": "Project Zero Limit",
+  "itemgroup.project_zero_limit.zero_limit_gems": "Gems",
 
   "category.project_zero_limit.abilities": "Zero Limit Abilities",
+  "key.project_zero_limit.r": "Combat Mode Enable/Disable",
   "key.project_zero_limit.z": "1st Ability",
   "key.project_zero_limit.x": "2nd Ability",
   "key.project_zero_limit.c": "3rd Ability",
   "key.project_zero_limit.v": "4th Ability",
-  "key.project_zero_limit.g": "Open Ability Inventory",  "container.project_zero_limit.ability_inventory": "Ability Inventory",
+  "key.project_zero_limit.g": "Open Mask Inventory",
 
+  "effect.project_zero_limit.combat_mode": "Combat Mode",
 
+  "item.project_zero_limit.oni_mask": "§4Oni Mask",
+  "item.project_zero_limit.oni_mask.tooltip_1": "§8Forged as a prison for a fallen Oni warlord, the mask carries fragments of his soul.",
+  "item.project_zero_limit.oni_mask.tooltip_2": "§8Each power it grants is a shard of his wrath and defiance, but every use draws the",
+  "item.project_zero_limit.oni_mask.tooltip_3": "§8wearer closer to corruption until mask and mortal become one.",
 
+  "item.project_zero_limit.red_gem": "§cRed Gem",
+  "item.project_zero_limit.red_gem.tooltip_1": "The Soul of Rage",
+  "item.project_zero_limit.red_gem.tooltip_2": "This gem burns with the pure fury of the Oni warlord. It’s said to be the crystallized heart of his wrath, still",
+  "item.project_zero_limit.red_gem.tooltip_3": "beating faintly within its core. When held close, you can hear distant battle cries and the echo of flames.",
 
-  "item.project_zero_limit.steel": "Steel",
+  "item.project_zero_limit.orange_gem": "§6Orange Gem",
+  "item.project_zero_limit.orange_gem.tooltip_1": "Gem of Radiant Flame",
+  "item.project_zero_limit.orange_gem.tooltip_2": "A gem born from the Oni’s passion and relentless ambition. It glows softly like the embers of a dying forge,",
+  "item.project_zero_limit.orange_gem.tooltip_3": "said to represent the Oni’s will to rise again.",
 
-  "tooltip.project_zero_limit.steel.tooltip": "Steel Tooltip",
-  "button.project_zero_limit.select_ability_1": "Ability 1",
-  "gui.project_zero_limit.active_abilities": "Active Abilities"
+  "item.project_zero_limit.yellow_gem": "§eYellow Gem",
+  "item.project_zero_limit.yellow_gem.tooltip_1": "Eye of Illumination",
+  "item.project_zero_limit.yellow_gem.tooltip_2": "Said to be a shard of the Oni’s mind, this gem pulses with strange patterns of light — both beautiful and",
+  "item.project_zero_limit.yellow_gem.tooltip_3": "unsettling. It represents awareness and vision beyond mortal understanding.",
+
+  "item.project_zero_limit.green_gem": "§2Green Gem",
+  "item.project_zero_limit.green_gem.tooltip_1": "Heart of Renewal",
+  "item.project_zero_limit.green_gem.tooltip_2": "This gem embodies the Oni’s lingering connection to nature — twisted, corrupted life energy still yearning",
+  "item.project_zero_limit.green_gem.tooltip_3": "for growth. The gem pulses like a living organ.",
+
+  "item.project_zero_limit.blue_gem": "§3Blue Gem",
+  "item.project_zero_limit.blue_gem.tooltip_1": "Shadow of Serenity",
+  "item.project_zero_limit.blue_gem.tooltip_2": "A calm gem representing the Oni’s lost tranquility — the moment before his rage was unleashed. The crystal",
+  "item.project_zero_limit.blue_gem.tooltip_3": "hums with an otherworldly silence.",
+
+  "item.project_zero_limit.purple_gem": "§dPurple Gem",
+  "item.project_zero_limit.purple_gem.tooltip_1": "Violet Black Star",
+  "item.project_zero_limit.purple_gem.tooltip_2": "The final and most dangerous gem — said to hold the Oni’s true essence, the pure corruption that defied",
+  "item.project_zero_limit.purple_gem.tooltip_3": "even the gods. Its light swirls like a miniature galaxy, devouring the glow around it.",
+
+  "advancement.project_zero_limit.main": "§fProject §8Zero §4Limit",
+  "advancement.project_zero_limit.main_desc": "Main advancement tab",
+
+  "sounds.project_zero_limit.oni_mask_equip": "Oni Mask Equipped"
+
 }

@@ -23,6 +23,16 @@ repositories {
 		name = "Ladysnake Mods"
 		url = 'https://maven.ladysnake.org/releases'
 	}
+
+	maven {
+		name = 'Ladysnake Mods'
+		url = 'https://maven.ladysnake.org/releases'
+		content {
+			includeGroup 'io.github.ladysnake'
+			includeGroup 'org.ladysnake'
+			includeGroupByRegex 'dev\\.onyxstudios.*'
+		}
+	}
 }
 
 fabricApi {
@@ -43,9 +53,8 @@ dependencies {
 	//Lib's
 	modImplementation("com.terraformersmc:modmenu:${project.modmenu_version}")//ModMenu
 	include(modImplementation("maven.modrinth:modmenu-badges-lib:${project.modmenu_badges_lib_version}"))//ModMenuBadgesLib
-	//Cardinal Components API
-	modImplementation "org.ladysnake.cardinal-components-api:cardinal-components-base:${project.cca_version}"
-	modImplementation "org.ladysnake.cardinal-components-api:cardinal-components-entity:${project.cca_version}"
+	modImplementation ("org.ladysnake:satin:${satin_version}")//Satin API
+	compileOnly "org.apiguardian:apiguardian-api:1.1.2"
 
 }
 

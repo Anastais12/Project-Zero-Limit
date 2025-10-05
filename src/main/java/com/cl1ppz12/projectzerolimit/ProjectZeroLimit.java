@@ -1,123 +1,77 @@
 package com.cl1ppz12.projectzerolimit;
 
-import com.cl1ppz12.projectzerolimit.inventory.AbilityInventoryScreenHandler;
-import com.cl1ppz12.projectzerolimit.item.ZeroLimitItemGroups;
-import com.cl1ppz12.projectzerolimit.item.ZeroLimitItems;
-import com.cl1ppz12.projectzerolimit.network.OpenAbilityInventoryPayload;
+import com.cl1ppz12.projectzerolimit.ability.AbilityRegistry;
+import com.cl1ppz12.projectzerolimit.command.ModCommands;
+import com.cl1ppz12.projectzerolimit.effect.ModEffects;
+import com.cl1ppz12.projectzerolimit.handler.PlayerStageDataHandler;
+import com.cl1ppz12.projectzerolimit.item.ModItemGroups;
+import com.cl1ppz12.projectzerolimit.item.ModItems;
+import com.cl1ppz12.projectzerolimit.network.ModNetworking;
+import com.cl1ppz12.projectzerolimit.network.ModPackets;
+import com.cl1ppz12.projectzerolimit.particle.ModParticles;
+import com.cl1ppz12.projectzerolimit.sound.ModSounds;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
-import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.resource.featuretoggle.FeatureFlags;
-import net.minecraft.screen.NamedScreenHandlerFactory;
-import net.minecraft.screen.ScreenHandler;
-import net.minecraft.screen.ScreenHandlerType;
-import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerWorldEvents;
+import net.minecraft.server.network.ServerPlayerEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
-
+import static com.cl1ppz12.projectzerolimit.handler.PlayerStageDataHandler.addPlayer;
 
 public class ProjectZeroLimit implements ModInitializer {
 
-	public static final String MOD_ID = "project_zero_limit"; // Ensure this matches your fabric.mod.json
+	public static final String MOD_ID = "project_zero_limit";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-
-
-	public static ScreenHandlerType<AbilityInventoryScreenHandler> ABILITY_INVENTORY_SCREEN_HANDLER;
-
-
-
 	@Override
-
 	public void onInitialize() {
-
-		ZeroLimitItemGroups.registerItemGroups();
-		ZeroLimitItems.registerModItems();
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 		LOGGER.info("Project Zero Limit is initializing!");
+//--------------------------------------------------------------------------------------------------------//
 
+		ModItems.initialize();
+		ModItemGroups.initialize();
 
+		ModEffects.registerEffects();
 
-		ABILITY_INVENTORY_SCREEN_HANDLER = Registry.register(
+		ModCommands.registerCommands();
 
-				Registries.SCREEN_HANDLER,
+		ModParticles.registerParticles();
 
-				Identifier.of(MOD_ID, "ability_inventory"),
+		ModEvents.registerEvents();
 
-				new ScreenHandlerType<>(AbilityInventoryScreenHandler::new, FeatureFlags.VANILLA_FEATURES)
+		ModSounds.registerSounds();
 
-		);
+		ModNetworking.registerC2SPackets();
+		ModNetworking.registerS2CPackets();
 
-		LOGGER.info("Registered Screen Handler Type.");
+		AbilityRegistry.init();
 
+		ModPackets.register();
 
-
-// Register the payload type for networking (S2C and C2S)
-
-		PayloadTypeRegistry.playC2S().register(OpenAbilityInventoryPayload.ID, OpenAbilityInventoryPayload.CODEC);
-
-// If you were to send this payload S2C, also register with playS2C()
-
-
-
-// Register Server-Side Packet Handler for the new payload
-
-		ServerPlayNetworking.registerGlobalReceiver(OpenAbilityInventoryPayload.ID, (payload, context) -> {
-
-			ServerPlayNetworking.Context Ctx = (ServerPlayNetworking.Context) context;
-
-// Ensure execution on the main server thread
-
-			Ctx.server().execute(() -> {
-
-				PlayerEntity player = Ctx.player();
-
-				if (player != null) {
-
-					player.openHandledScreen(new NamedScreenHandlerFactory() {
-
-						@Override
-
-						public Text getDisplayName() {
-
-// Make sure to add this to your lang file:
-
-// "container.project_zero_limit.ability_inventory": "Ability Inventory"
-
-							return Text.translatable("container.project_zero_limit.ability_inventory");
-
-						}
-						@Override
-
-						public ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity playerEntity) {
-
-// The handler itself will create its SimpleInventory
-
-							return new AbilityInventoryScreenHandler(syncId, playerInventory);
-
-						}
-
-					});
-
+		// Register server tick event to update ability cooldowns
+		ServerTickEvents.END_SERVER_TICK.register(server -> {
+			server.getPlayerManager().getPlayerList().forEach(player -> {
+				PlayerAbilityData abilityData = PlayerAbilityData.get(player);
+				if (abilityData != null) {
+					abilityData.tick();
 				}
-
 			});
-
 		});
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-		LOGGER.info("Registered packet receiver.");
+//--------------------------------------------------------------------------------------------------------//
 
+		ServerWorldEvents.LOAD.register(PlayerStageDataHandler::onWorldLoad);
+		ServerLifecycleEvents.SERVER_STARTED.register(server -> {
+			for (ServerPlayerEntity player : server.getPlayerManager().getPlayerList()) {
+				addPlayer(server, player.getUuid());
+			}
+		});
+
+//--------------------------------------------------------------------------------------------------------//
+
+		LOGGER.info("Project Zero Limit Initialized!");
 	}
-
 }
