@@ -1,30 +1,30 @@
 package com.cl1ppz12.projectzerolimit.ability;
 
-import com.cl1ppz12.projectzerolimit.ProjectZeroLimit; // Import your main mod class
+import com.cl1ppz12.projectzerolimit.ProjectZeroLimit;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import net.minecraft.world.World;
 
-/**
- * A concrete implementation of the Ability class for testing purposes.
- * This ability simply sends a message to the player when activated.
- */
 public class TestAbility extends Ability {
 
-    public TestAbility(Identifier id, Text name, Text description) {
-        super(id, name, description);
+    public TestAbility() {
+        super(Identifier.of(ProjectZeroLimit.MOD_ID, "test_ability"), "Test Ability", 100, 5);
     }
 
-    /**
-     * Defines the effect of the TestAbility.
-     * In this case, it sends a chat message to the player.
-     * @param player The player who activated the ability.
-     */
     @Override
-    public void activate(PlayerEntity player) {
-        if (!player.getWorld().isClient()) {
-            player.sendMessage(Text.translatable("ability.project_zero_limit.test_ability.activated"), false);
-            ProjectZeroLimit.LOGGER.info("Player {} activated Test Ability!", player.getName().getString());
+    public void use(PlayerEntity player, int level) {
+        World world = player.getWorld();
+        if (!world.isClient) {
+            player.addVelocity(0, 0.5 * level, 0);
+            player.velocityModified = true;
+
+            player.sendMessage(Text.literal("Test Ability used! Level: " + level), false);
         }
+    }
+
+    @Override
+    public boolean canUse(PlayerEntity player, int level) {
+        return player.isOnGround() && level > 0;
     }
 }

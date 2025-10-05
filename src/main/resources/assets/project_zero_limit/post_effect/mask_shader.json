@@ -1,0 +1,88 @@
+{
+  "targets": [
+    {
+      "name": "swap",
+      "satin:format": "RGBA16F"
+    },
+    {
+      "name": "depth_buffer",
+      "satin:format": "RGBA32F"
+    }
+  ],
+  "passes": [
+    {
+      "name": "project_zero_limit:depth_extract",
+      "intarget": "minecraft:main",
+      "outtarget": "depth_buffer",
+      "auxtargets": [
+        {
+          "name": "DepthSampler",
+          "id": "minecraft:main:depth"
+        }
+      ],
+      "uniforms": [
+        {
+          "name": "DepthScale",
+          "values": [2.0, 1.0, 0.5]
+        },
+        {
+          "name": "Intensity",
+          "values": [0.8]
+        }
+      ]
+    },
+    {
+      "name": "blit",
+      "intarget": "depth_buffer",
+      "outtarget": "swap"
+    },
+    {
+      "name": "project_zero_limit:red_enhance",
+      "intarget": "minecraft:main",
+      "outtarget": "swap",
+      "auxtargets": [
+        {
+          "name": "DepthTexture",
+          "id": "depth_buffer"
+        }
+      ],
+      "uniforms": [
+        {
+          "name": "RedMatrix",
+          "values": [1.5, 0.3, 0.2]
+        },
+        {
+          "name": "GreenMatrix",
+          "values": [0.2, 0.7, 0.1]
+        },
+        {
+          "name": "BlueMatrix",
+          "values": [0.1, 0.2, 0.6]
+        },
+        {
+          "name": "DepthInfluence",
+          "values": [0.6]
+        },
+        {
+          "name": "RedBoost",
+          "values": [1.8]
+        }
+      ]
+    },
+    {
+      "name": "project_zero_limit:oni_glow",
+      "intarget": "swap",
+      "outtarget": "minecraft:main",
+      "uniforms": [
+        {
+          "name": "GlowIntensity",
+          "values": [0.3]
+        },
+        {
+          "name": "GlowColor",
+          "values": [1.0, 0.2, 0.1]
+        }
+      ]
+    }
+  ]
+}

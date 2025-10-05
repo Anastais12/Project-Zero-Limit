@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "project_zero_limit:oni_arena",
+      "weight": 4
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 25,
+    "separation": 5,
+    "salt": 0
+  }
+}

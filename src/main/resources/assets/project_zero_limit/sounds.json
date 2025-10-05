@@ -1,0 +1,8 @@
+{
+    "oni_mask_equip": {
+      "subtitle": "sounds.project_zero_limit.oni_mask_equip",
+      "sounds": [
+        "project_zero_limit:oni_mask_equip"
+      ]
+    }
+  }

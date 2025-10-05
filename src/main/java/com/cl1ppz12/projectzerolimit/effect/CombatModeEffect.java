@@ -9,7 +9,7 @@ public class CombatModeEffect extends StatusEffect {
     public CombatModeEffect(StatusEffectCategory category, int color) {
         super(category, color);
     }
-    @Override
+
     public boolean applyUpdateEffect(ServerWorld world, LivingEntity entity, int amplifier) {
         return true;
     }

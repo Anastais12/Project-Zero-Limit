@@ -14,8 +14,9 @@ public class ModEffects {
     public static final RegistryEntry<StatusEffect> COMBAT_MODE = registerStatusEffect("combat_mode",
             new CombatModeEffect(StatusEffectCategory.NEUTRAL, 0x36ebab)
     );
-    public static final RegistryEntry<StatusEffect> SHADOW_REALM = registerStatusEffect("shadow_realm",
-            new CombatModeEffect(StatusEffectCategory.NEUTRAL, 0x36ebab)
+
+    public static final RegistryEntry<StatusEffect> INTERDIMENSIONAL_TRAVEL = registerStatusEffect("interdimensional_travel",
+            new InterDimensionalTravel(StatusEffectCategory.BENEFICIAL, 0x36ebab)
     );
 
 

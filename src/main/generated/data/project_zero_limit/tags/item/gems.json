@@ -1,0 +1,11 @@
+{
+  "replace": true,
+  "values": [
+    "project_zero_limit:red_gem",
+    "project_zero_limit:yellow_gem",
+    "project_zero_limit:orange_gem",
+    "project_zero_limit:blue_gem",
+    "project_zero_limit:purple_gem",
+    "project_zero_limit:green_gem"
+  ]
+}

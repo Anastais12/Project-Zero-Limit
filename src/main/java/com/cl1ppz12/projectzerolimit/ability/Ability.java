@@ -1,60 +1,49 @@
 package com.cl1ppz12.projectzerolimit.ability;
 
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import net.minecraft.text.Text;
 
-/**
- * Represents a generic ability in Project Zero Limit.
- * This class holds the core data for an ability and defines its activation logic.
- * Abilities should be registered to a custom registry if you have many.
- */
 public abstract class Ability {
     private final Identifier id;
-    private final Text name;
-    private final Text description;
+    private final String name;
+    private final int cooldown;
+    private final int maxLevel;
 
-    /**
-     * Constructor for a new Ability.
-     * @param id The unique Identifier for this ability.
-     * @param name The display name of the ability.
-     * @param description The description of the ability.
-     */
-    public Ability(Identifier id, Text name, Text description) {
+    public Ability(Identifier id, String name, int cooldown, int maxLevel) {
         this.id = id;
         this.name = name;
-        this.description = description;
+        this.cooldown = cooldown;
+        this.maxLevel = maxLevel;
     }
 
-    /**
-     * Gets the unique identifier of this ability.
-     * @return The Identifier.
-     */
+    public abstract void use(PlayerEntity player, int level);
+
+    public abstract boolean canUse(PlayerEntity player, int level);
+
     public Identifier getId() {
         return id;
     }
 
-    /**
-     * Gets the display name of this ability.
-     * @return The display name as Text.
-     */
-    public Text getName() {
+    public String getName() {
         return name;
     }
 
-    /**
-     * Gets the description of this ability.
-     * @return The description as Text.
-     */
-    public Text getDescription() {
-        return description;
+    public int getCooldown() {
+        return cooldown;
     }
 
-    /**
-     * Abstract method to define the effect of the ability when activated.
-     * This method MUST be implemented by concrete ability classes.
-     * @param player The player who activated the ability.
-     */
-    public abstract void activate(PlayerEntity player);
+    public int getMaxLevel() {
+        return maxLevel;
+    }
 
+    public Text getDisplayName() {
+        return Text.literal(name);
+    }
+
+    public enum AbilityType {
+        ACTIVE,
+        PASSIVE,
+        ULTIMATE
+    }
 }

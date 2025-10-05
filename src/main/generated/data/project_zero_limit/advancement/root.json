@@ -1,0 +1,24 @@
+{
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "background": "project_zero_limit:textures/gui/background.png",
+    "description": {
+      "translate": "advancement.project_zero_limit.main_desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "project_zero_limit:oni_mask"
+    },
+    "title": "Project Zero Limit"
+  },
+  "requirements": [
+    [
+      "impossible"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
