@@ -1,0 +1,60 @@
+{
+  "providers": [
+    {
+      "type": "bitmap",
+      "file": "project_zero_limit:icons/learned.png",
+      "ascent": 9,
+      "height": 12,
+      "chars": ["\uE001"]
+    },
+    {
+      "type": "bitmap",
+      "file": "project_zero_limit:icons/innate.png",
+      "ascent": 9,
+      "height": 12,
+      "chars": ["\uE002"]
+    },
+    {
+      "type": "bitmap",
+      "file": "project_zero_limit:icons/heart.png",
+      "ascent": 8,
+      "height": 10,
+      "chars": ["\uE003"]
+    },
+    {
+      "type": "bitmap",
+      "file": "project_zero_limit:icons/cooldown.png",
+      "ascent": 8,
+      "height": 10,
+      "chars": ["\uE004"]
+    },
+    {
+      "type": "bitmap",
+      "file": "project_zero_limit:icons/cost.png",
+      "ascent": 8,
+      "height": 10,
+      "chars": ["\uE005"]
+    },
+    {
+      "type": "bitmap",
+      "file": "project_zero_limit:icons/check.png",
+      "ascent": 8,
+      "height": 10,
+      "chars": ["\uE006"]
+    },
+    {
+      "type": "bitmap",
+      "file": "project_zero_limit:icons/variant.png",
+      "ascent": 9,
+      "height": 12,
+      "chars": ["\uE007"]
+    },
+    {
+      "type": "bitmap",
+      "file": "project_zero_limit:mob_effect/interdimensional_travel.png",
+      "ascent": 9,
+      "height": 12,
+      "chars": ["\uE008"]
+    }
+  ]
+}

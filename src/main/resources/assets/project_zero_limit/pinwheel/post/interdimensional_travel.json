@@ -1,0 +1,9 @@
+{
+  "stages": [
+    {
+      "type": "veil:blit",
+      "shader": "project_zero_limit:interdimensional_travel",
+      "in": "minecraft:main"
+    }
+  ]
+}

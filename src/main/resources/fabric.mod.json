@@ -5,10 +5,13 @@
 	"name": "Project Zero Limit",
 	"description": "This is a Mod about Universal Powers With Zero Limits!",
 	"authors": [
-		"cl1ppz12"
+		"cl1ppz12 - Coder/ Artist"
+	],
+	"contributors": [
+		"Themilkturtle - Modeler/ Artist"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/"
+		"homepage": "https://modrinth.com/project/project-zero-limit"
 	},
 	"license": "MIT",
 	"icon": "assets/project_zero_limit/icon.png",
@@ -22,21 +25,25 @@
 		],
 		"client": [
 			"com.cl1ppz12.projectzerolimit.client.ProjectZeroLimitClient"
+		],
+		"cardinal-components-entity": [
+			"com.cl1ppz12.projectzerolimit.cca.ModComponents"
 		]
 	},
 	"mixins": [
 		"project_zero_limit.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.16.10",
-		"minecraft": "~1.21.5",
+		"fabricloader": ">=0.16.14",
+		"minecraft": "~1.21.1",
 		"java": ">=21",
 		"fabric-api": "*",
-		"cardinal-components-base": "*",
-		"cardinal-components-entity": "*"
+		"cardinal-components-base": ">=6.1.2",
+		"cardinal-components-entity": ">=6.1.2"
 	},
 	"suggests": {
-		"ProjectJJk": "https://modrinth.com/mod/projectjjk"
+		"ProjectJJk": "https://modrinth.com/mod/projectjjk",
+		"Affix": "https://modrinth.com/mod/affix"
 	},
 	"recommends": {
 		"modmenu-badges-lib": "*"
@@ -55,6 +62,9 @@
 				"fillColor": -4521984,
 				"outlineColor": -12976128
 			}
+		],
+		"cardinal-components": [
+			"project_zero_limit:abilities"
 		]
 	}
 }

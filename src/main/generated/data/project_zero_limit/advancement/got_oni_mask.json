@@ -1,0 +1,29 @@
+{
+  "parent": "project_zero_limit:root",
+  "criteria": {
+    "got_oni_mask": {
+      "conditions": {
+        "items": [
+          {
+            "items": "project_zero_limit:oni_mask"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Obtain the Oni Mask",
+    "icon": {
+      "count": 1,
+      "id": "project_zero_limit:oni_mask"
+    },
+    "title": "An Unsettling Presence"
+  },
+  "requirements": [
+    [
+      "got_oni_mask"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

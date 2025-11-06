@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "project_zero_limit:item/scroll_of_the_dual_void"
+  }
+}

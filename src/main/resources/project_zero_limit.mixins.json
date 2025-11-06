@@ -1,11 +1,16 @@
 {
-	"required": true,
-	"package": "com.cl1ppz12.projectzerolimit.mixin",
-	"compatibilityLevel": "JAVA_21",
-	"mixins": [
-		"ExampleMixin"
-	],
-	"injectors": {
-		"defaultRequire": 1
-	}
+  "required": true,
+  "package": "com.cl1ppz12.projectzerolimit.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "client": [
+    "InvisInjectMixin",
+    "MixinInGameHud",
+    "MixinMouseCancel",
+    "MouseScrollMixin"
+  ]
 }
